@@ -4,7 +4,7 @@ import sqlite3
 import time
 import urllib.request
 
-bd = sqlite3.connect('/home/eduardo/base.sqlite')
+bd = sqlite3.connect('base.sqlite')
 cur = bd.cursor()
 idP = 1
 idC = 1
@@ -77,7 +77,7 @@ def cliente(conn, addr):
         #print(f'Mensaje recibido de {addr}: {received_message}')
         
         # Almacenar mensaje recibido en un archivo
-        with open(f"/home/eduardo/msgs.txt", "a") as file:
+        with open(f"msgs.txt", "a") as file:
             file.write(f"[Recibido] {time.strftime('%Y-%m-%d_%H:%M:%S')} - {received_message}\n")
         
         # Enviar un mensaje de confirmación al cliente
@@ -107,7 +107,7 @@ def mensaje(server_ip, server_port, message):
         print(f"Mensaje enviado a {server_ip}:{server_port}: {mt}")
         
         # Almacenar mensaje enviado en un archivo
-        with open(f"/home/eduardo/msgs.txt", "a") as file:
+        with open(f"msgs.txt", "a") as file:
             file.write(f"[Enviado] {t} - {message}\n")
         
         response = s.recv(1024)
@@ -115,7 +115,7 @@ def mensaje(server_ip, server_port, message):
         print(f"Respuesta del servidor {server_ip}:{server_port}: {decoded_response}")
         
         # Almacenar mensaje de confirmación recibido en un archivo
-        with open(f"/home/eduardo/msgs.txt", "a") as file:
+        with open(f"msgs.txt", "a") as file:
             file.write(f"[Recibido] {time.strftime('%Y-%m-%d_%H:%M:%S')} - {decoded_response}\n")
 
 def obtener_ip():
