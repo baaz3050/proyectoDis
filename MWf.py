@@ -167,11 +167,10 @@ if __name__ == "__main__":
             j = 1
         elif (ip == hosts[1]):
             j = 2
-'''        elif (ip == hosts[2]):
+        elif (ip == hosts[2]):
             j = 3
         elif (ip == hosts[3]):
             j = 4
-'''
         cur.execute('INSERT INTO INVENTARIO (idSucursal, producto, cantidad) VALUES (?,?,?)',(j,i,t[j-1]))
         i += 1
     bd.commit()
