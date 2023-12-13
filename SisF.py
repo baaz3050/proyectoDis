@@ -11,10 +11,18 @@ idC = 1
 
 # Configuración de los servidores en cada máquina virtual
 hosts = [
+
+    "192.168.171.129",
+    "192.168.171.150",
+    "192.168.171.151",
+    "192.168.171.152"
+
+    '''
     "192.168.153.128",
     "192.168.153.129",
     "192.168.153.130",
     "192.168.153.131"
+    '''
 ]
 port = [      # Puerto para la comunicación entre las máquinas
     1111,
